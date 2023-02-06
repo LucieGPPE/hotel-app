@@ -1,0 +1,21 @@
+.container {
+  height: 40vw;
+  background: url(https://www.annaplatanou.gr/media/k2/items/cache/49d07d2f2b048709fab28e0845347114_XL.jpg);
+  background-size: 100vw 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  font-size: 3.5vw;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+  font-style: italic;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 3px black;
+}

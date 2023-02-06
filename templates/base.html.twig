@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="{{ asset('style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('styles/style.css') }}" />
+    {% block style %} {% endblock %}
   </head>
   <body>
+    {{ include("default/_navbar.html.twig") }}
     {% block body %} {% endblock %}
   </body>
 </html>
