@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %} {% block title %}Hello ContactController!{%
+endblock %} {% block body %}
+<h1>Formulaire de contact :</h1>
+
+{{ form_start(form) }}
+<div class="my-custom-class-for-errors">
+  {{ form_errors(form) }}
+</div>
+
+<div class="contactForm">
+  <div class="input">
+    {{ form_row(form.email) }}
+  </div>
+  <div class="input">
+    {{ form_row(form.sujet) }}
+  </div>
+  <div class="input">
+    {{ form_row(form.texte) }}
+  </div>
+</div>
+{{ form_end(form) }}
+{% endblock %}

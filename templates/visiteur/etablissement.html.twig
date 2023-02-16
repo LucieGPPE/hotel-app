@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %} {% block title %}Les établissements{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{{ asset('styles/etablissement.css') }}" />
+{% endblock %}{% block body %}
+
+<div class="container">
+  <h1 class="title">Les suites :</h1>
+  {% for suite in suites %}
+  <p>{{ suite.titre }}</p>
+  <p>{{ suite.prix }}</p>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

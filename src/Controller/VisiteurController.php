@@ -19,4 +19,13 @@ class VisiteurController extends AbstractController
             'controller_name' => 'VisiteurController','etablissements'=>$allEtablissements
         ]);
     }
+    #[Route('/etablissement/{id}', name: 'app_etablissement')]
+    public function suiteEtablissement(ManagerRegistry $doctrine, int $id): Response
+    {
+        $etablissementRepository = $doctrine->getRepository(Etablissement::class);
+        $allSuitesEtablissement = $etablissementRepository->find($id);
+        return $this->render('visiteur/etablissement.html.twig', [
+            'controller_name' => 'VisiteurController','suites'=>$allSuitesEtablissement->getSuites()
+        ]);
+    }
 }
