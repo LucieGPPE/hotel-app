@@ -7,7 +7,8 @@
   <h1 class="title">Les suites :</h1>
   {% for suite in suites %}
   <p>{{ suite.titre }}</p>
-  <p>{{ suite.prix }}</p>
+  <p>{{ suite.prix }} €</p>
+  <img src="{{ suite.image }}" alt="img_{{ suite.titre }}" srcset="" />
 
   {% endfor %}
 </div>

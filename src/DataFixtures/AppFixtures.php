@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
             $product = new Image();
         
 
-            $product->setUrl($faker->imageUrl(640, 480, 'animals', true));
+            $product->setUrl($faker->imageUrl(50, 50, true));
             $product->setDescription($faker->word());
             $product->setSuiteId($this->getReference('Suite_'.mt_rand(0,15)));
             $manager->persist($product);
@@ -72,7 +72,7 @@ class AppFixtures extends Fixture
 
             $product->setTitre($faker->word());
             $product->setDescription($faker->sentence());   
-            $product->setImage($faker->imageUrl(640, 480, 'animals', true)); 
+            $product->setImage($faker->imageUrl(50, 50, true)); 
             $product->setPrix($faker->numberBetween(20,600));   
 
             $product->setEtablissement($newEtablissement);
@@ -91,6 +91,16 @@ class AppFixtures extends Fixture
     }
     private function loadClient(ObjectManager $manager):void{
         $faker = Faker\Factory::create("fr_FR");
+        // Client test
+        $client = new User();
+        $client->setEmail('client@client.fr');
+        $client->setRoles(['ROLE_USER']);
+        $client->setPassword(
+        $this->userPasswordHasherInterface->hashPassword(
+            $client, 'client1234'
+        )
+        );
+        $manager->persist($client);
 
         for($i=0; $i<16;$i++){
              $client = new User();
