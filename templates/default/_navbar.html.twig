@@ -4,6 +4,14 @@
     <a href="/visiteur">Les Établissements</a>
   </div>
   <div class="navItems navRight">
+    {% if (is_granted("ROLE_USER") or is_granted("ROLE_ADMIN")) %}
+    <a href="/mesreservations">Mes réservations </a>
+    <a href="/logout">Se déconnecter </a>
+    {% else %}
     <a href="/login">Se connecter </a>
+    {% endif %} {% if is_granted("ROLE_ADMIN") %}
+    <a href="/admin">Admin </a>
+
+    {% endif %}
   </div>
 </nav>

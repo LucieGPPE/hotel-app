@@ -6,10 +6,11 @@
 <div class="container">
   <h1 class="title">Les suites :</h1>
   {% for suite in suites %}
-  <p>{{ suite.titre }}</p>
-  <p>{{ suite.prix }} €</p>
-  <img src="{{ suite.image }}" alt="img_{{ suite.titre }}" srcset="" />
-
+  <a href="/suites/{{ suite.id }}">
+    <p>{{ suite.titre }}</p>
+    <p>{{ suite.prix }} €</p>
+    <img src="{{ suite.image }}" alt="img_{{ suite.titre }}" srcset="" />
+  </a>
   {% endfor %}
 </div>
 

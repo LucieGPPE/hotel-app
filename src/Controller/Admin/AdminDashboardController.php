@@ -30,7 +30,7 @@ class AdminDashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Etablissements', 'fas fa-hotel', Etablissement::class);
+        yield MenuItem::linkToCrud('Etablissements', 'fas fa-hotel', Etablissement::class)->setPermission('ROLE_GERANT');
         yield MenuItem::linkToCrud('Suites', 'fas fa-bed', Suite::class);
         yield MenuItem::linkToCrud('Images', 'fas fa-image', Image::class);
         yield MenuItem::linkToCrud('Réservations', 'fas fa-check', Reservation::class);
